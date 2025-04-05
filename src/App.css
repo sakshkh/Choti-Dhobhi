@@ -1,0 +1,52 @@
+/* app.css — Tailwind-compatible and clean */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Logo styles with theme-based drop-shadow */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover,
+.logo.react:hover {
+  /* This uses your primary color hue (purple-pink) from Tailwind's :root */
+  filter: drop-shadow(0 0 2em hsl(var(--ring))); /* or use --primary for glow */
+}
+
+/* Optional logo spin */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card consistent with theme */
+.card {
+  padding: 2em;
+  border-radius: 1rem;
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Subdued paragraph or small text */
+.read-the-docs {
+  color: hsl(var(--muted-foreground));
+}
